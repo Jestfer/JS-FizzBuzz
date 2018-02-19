@@ -18,6 +18,11 @@
 
 var FizzBuzz = function() {};
 
-FizzBuzz.prototype._isDivisibleByThree = function(num) {
-  return true;
+FizzBuzz.prototype._isDivisibleBy = function(num, divisor) {
+  return num % divisor === 0;
+};
+
+FizzBuzz.prototype._isDivisibleByFifteen = function(num) {
+  // return FizzBuzz.prototype._isDivisibleBy(num, 15);
+  return this._isDivisibleBy(num, 15);
 };

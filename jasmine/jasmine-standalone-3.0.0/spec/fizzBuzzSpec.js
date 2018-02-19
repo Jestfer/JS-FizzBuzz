@@ -24,11 +24,25 @@
 describe('FizzBuzz', function() {
   var fizzbuzz;
 
+  beforeEach(function() {
+    fizzbuzz = new FizzBuzz();
+  });
+
   describe('knows when number is', function() {
     it('is divisible by 3', function() {
-      var fizzbuzz = new FizzBuzz();
+      expect(fizzbuzz._isDivisibleBy(3, 3)).toEqual(true);
+    });
 
-      expect(fizzbuzz._isDivisibleByThree(3)).toEqual(true)
+    it('is not divisible by 3', function() {
+      expect(fizzbuzz._isDivisibleBy(1, 3)).toEqual(false);
+    });
+
+    it('is divisible by 5', function() {
+      expect(fizzbuzz._isDivisibleBy(5, 5)).toEqual(true);
+    });
+
+    it('is divisible by 15', function() {
+      expect(fizzbuzz._isDivisibleByFifteen(15)).toEqual(true);
     });
   });
 });
